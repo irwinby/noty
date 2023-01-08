@@ -36,7 +36,7 @@ linters:
 
 linters-settings:
   goimports:
-    local-prefixes: github.com/hereisajvi/chatic
+    local-prefixes: github.com/hereisajvi/noty
   misspell:
     locale: US
   lll:

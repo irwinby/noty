@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := local-run
 
-BINARY_NAME := chatic
+BINARY_NAME := noty
 
 .PHONY: lint
 lint:
@@ -29,3 +29,11 @@ build-docker-image:
 .PHONY: local-run
 local-run: build-docker-image
 	docker-compose up --force-recreate --remove-orphans
+
+.PHONY: swagger
+swagger:
+	swag init --output api/
+
+.PHONY: mock
+mock:
+	mockery --all --with-expecter --case=underscore --outpkg=mock --output=./internal/mock
